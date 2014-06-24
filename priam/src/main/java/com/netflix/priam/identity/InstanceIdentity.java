@@ -203,10 +203,10 @@ public class InstanceIdentity
         {
             String ip = null;
             for (PriamInstance ins : allIds) {
-                logger.info("Calling getIp on hostname[" + ins.getHostName() + "] and token[" + token + "]");
                 if (ins.getToken().equals(token) || !ins.getDC().equals(location)) { //avoid using dead instance and other regions' instances
                     continue;	
                 }
+                logger.info("Calling getIp on hostname[" + ins.getHostName() + "] and token[" + token + "]");
                 
           	    try {
         	       ip = getIp(ins.getHostName(), token);
